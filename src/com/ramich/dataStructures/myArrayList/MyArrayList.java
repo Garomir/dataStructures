@@ -40,8 +40,9 @@ public class MyArrayList<T> {
     }
 
     public void delete(int index){
-        arr[index] = null;
+        //arr[index] = null;
         moveItemsToLeft(index);
+        element--;
     }
 
     private void moveItemsToRight(int index){
@@ -51,7 +52,7 @@ public class MyArrayList<T> {
     }
 
     private void moveItemsToLeft(int index){
-        for (int i = index; i > element; i++) {
+        for (int i = index; i < element; i++) {
             arr[i] = arr[i+1];
         }
     }
