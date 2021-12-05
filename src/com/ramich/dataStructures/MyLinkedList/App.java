@@ -11,5 +11,11 @@ public class App {
 
         myLinkedList.addToHead(55);
         myLinkedList.display();
+
+        myLinkedList.addByIndex(3, 77);
+        myLinkedList.display();
+
+        myLinkedList.remove(3);
+        myLinkedList.display();
     }
 }

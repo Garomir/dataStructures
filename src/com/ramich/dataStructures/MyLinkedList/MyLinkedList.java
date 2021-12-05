@@ -27,7 +27,37 @@ public class MyLinkedList<T> {
         head = node;
     }
 
+    public void addByIndex(int index, T item){
+        Node node = new Node();
+        node.data = item;
+        node.next = null;
 
+        if (index == 0){
+            addToHead(item);
+        } else {
+            Node current = head;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            node.next = current.next;
+            current.next = node;
+        }
+    }
+
+    public void remove(int index){
+        if (index == 0){
+            head = head.next;
+        } else {
+            Node current = head;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            Node temp = null;
+            temp = current.next;
+            current.next = temp.next;
+            temp = null;
+        }
+    }
 
     public void display(){
         Node current = head;
