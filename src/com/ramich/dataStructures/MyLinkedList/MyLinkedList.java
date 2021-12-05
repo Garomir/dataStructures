@@ -27,6 +27,8 @@ public class MyLinkedList<T> {
         head = node;
     }
 
+
+
     public void display(){
         Node current = head;
         while (current != null){
