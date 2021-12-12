@@ -2,12 +2,27 @@ package com.ramich.dataStructures.MyBinaryTree;
 
 public class App {
     public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree();
+        BinaryTree tree = new BinaryTree();
 
-        for (int i = 1; i <= 50; i++) {
-            binaryTree.insertNode((int) (Math.random() * 100));
-        }
+        tree.insertNode(6);
+        tree.insertNode(8);
+        tree.insertNode(5);
+        tree.insertNode(8);
+        tree.insertNode(2);
+        tree.insertNode(9);
+        tree.insertNode(7);
+        tree.insertNode(4);
+        tree.insertNode(10);
+        tree.insertNode(3);
+        tree.insertNode(1);
+        tree.printTree();
 
-        System.out.println(binaryTree.findNodeByValue(33));
+        // удаляем один узел и выводим оставшееся дерево в консоли
+        tree.deleteNode(5);
+        tree.printTree();
+
+        // находим узел по значению и выводим его в консоли
+        Node foundNode = tree.findNodeByValue(7);
+        foundNode.printNode();
     }
 }
